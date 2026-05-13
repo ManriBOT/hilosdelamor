@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Hilos de Amor - Un espacio para crecer y sanar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+    <!-- Botón flotante de traducción -->
+    <button class="translate-btn" id="translateBtn" data-lang="Translate to English" onclick="toggleLanguage()">
+        <i class="fas fa-language"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpeg" alt="Logo Fundación Hilos de Amor">
+            </div>
+            <div class="nav-links">
+                <a href="#inicio" data-es="INICIO" data-en="HOME">INICIO</a>
+                <a href="#mision" data-es="QUIEN SOY" data-en="ABOUT ME">QUIEN SOY</a>
+                <a href="#vision" data-es="EJECUCION" data-en="ENFORCEMENT">EJECUCION</a>
+                <a href="#que-hacemos-main" data-es="QUÉ HACEMOS" data-en="WHAT WE DO">QUÉ HACEMOS</a>
+                <a href="#talleres" data-es="TALLERES" data-en="WORKSHOPS">TALLERES</a>
+                <a href="#fundadores" data-es="NOSOTROS" data-en="ABOUT US">NOSOTROS</a>
+                <a href="#contacto" data-es="CONTACTO" data-en="CONTACT">CONTACTO</a>
+                <a href="#ubicacion" data-es="UBICACIÓN" data-en="LOCATION">UBICACIÓN</a>
+            </div>
+            <div class="nav-user" data-es="Hilos de Amor" data-en="Threads of Love">Hilos de Amor</div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Fullscreen Impactante -->
+    <header id="inicio" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span data-es="Fundación de Apoyo Emocional" data-en="Emotional Support Foundation">Fundación de Apoyo Emocional</span>
+            </div>
+            <h1 data-es="UN ESPACIO PARA CRECER Y SANAR" data-en="A SPACE TO GROW AND HEAL">
+                UN ESPACIO PARA<br><span class="highlight">CRECER Y SANAR</span>
+            </h1>
+            <p data-es="Apoyo emocional • Talleres transformadores • Comunidad segura" data-en="Emotional support • Transformative workshops • Safe community">
+                Apoyo emocional • Talleres transformadores • Comunidad segura
+            </p>
+        </div>
+    </header>
+
+    <!-- Mission Section -->
+    <section class="mission-section" id="mision">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2 class="section-title" data-es="QUIEN SOY" data-en="ABOUT ME">QUIEN SOY</h2>
+                <p data-es="Somos una fundación llamada hilos de amor que está enfocada en ayudar a los aprendices Sena que sufren de problemas, estrés academico, baja auatoestima, entre otras cosas." data-en="We are a foundation called Hilos de Amor that is dedicated to helping SENA students who are struggling with academic stress, low self-esteem, and other issues.">Somos una fundación llamada hilos de amor que está enfocada en ayudar a los aprendices Sena que sufren de problemas, estrés academico, baja auatoestima, entre otras cosas.</p>
+            </div>
+            <div class="image-content">
+                <img src="nueva10.jpg" alt="Manos unidas representando unidad y apoyo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="mission-section alternate" id="vision">
+        <div class="content-wrapper reverse">
+            <div class="image-content">
+                <img src="nueva2.jpg" alt="Frase inspiradora sobre el crecimiento personal">
+            </div>
+            <div class="text-content">
+                <h2 class="section-title" data-es="EJECUCIÓN" data-en="ENFORCEMENT">EJECUCIÓN</h2>
+                <p data-es="La fundación Hilos de Amor realizará talleres emocionales para estudiantes con estrés o problemas personales, usando actividades como manualidades, pintura y charlas motivacionales para apoyar su bienestar y desarrollo personal." data-en="The Hilos de Amor foundation will organize emotional support workshops for students facing stress or personal difficulties, using activities like crafts, painting, and motivational talks to improve their well-being and personal growth. ">La fundación Hilos de Amor realizará talleres emocionales para estudiantes con estrés o problemas personales, usando actividades como manualidades, pintura y charlas motivacionales para apoyar su bienestar y desarrollo personal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué Hacemos Section - NUEVA -->
+    <section class="mission-section" id="que-hacemos-main">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2 class="section-title" data-es="QUÉ HACEMOS" data-en="WHAT WE DO">QUÉ<br>HACEMOS</h2>
+                <p data-es="Ofrecemos talleres, charlas y actividades diseñadas para fomentar la resiliencia emocional, la autoestima y el bienestar general. Nuestro enfoque está basado en la empatía, el respeto y la comprensión hacia las experiencias individuales de cada persona." data-en="We offer workshops, talks, and activities designed to foster emotional resilience, self-esteem, and overall well-being. Our approach is based on empathy, respect, and understanding of each person's individual experiences.">Ofrecemos talleres, charlas y actividades diseñadas para fomentar la resiliencia emocional, la autoestima y el bienestar general. Nuestro enfoque está basado en la empatía, el respeto y la comprensión hacia las experiencias individuales de cada persona.</p>
+            </div>
+            <div class="image-content">
+                <img src="nueva7.jpg" alt="Actividades grupales de apoyo emocional">
+            </div>
+        </div>
+    </section>
+
+    <!-- Talleres - Cards deslizantes -->
+    <section class="talleres-section" id="talleres">
+        <div class="section-header">
+            <h2 class="section-title" data-es="TALLERES TRANSFORMADORES" data-en="TRANSFORMATIVE WORKSHOPS">TALLERES<br>TRANSFORMADORES</h2>
+            <p data-es="Brindamos talleres que ayudan a desarrollar habilidades sociales, de comunicación y de autoconocimiento." data-en="We offer workshops that help develop social, communication, and self-awareness skills.">Brindamos talleres que ayudan a desarrollar habilidades sociales, de comunicación y de autoconocimiento.</p>
+        </div>
+        <div class="workshops-grid">
+            <div class="workshop-card">
+                <div class="workshop-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 data-es="Expresión artística" data-en="Artistic expression">Expresión artística</h3>
+                <p data-es="Uso del arte para expresar emociones e ideas mediante actividades creativas que ayudan a los aprendices a sentirse más seguros y comunicarse mejor." data-en="Use of art to express emotions and ideas through creative activities that help learners build confidence and communicate better.">Uso del arte para expresar emociones e ideas mediante actividades creativas que ayudan a los aprendices a sentirse más seguros y comunicarse mejor.</p>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 data-es="Manejo de emociones" data-en="Emotion management">Manejo de emociones</h3>
+                <p data-es="Reconocer y controlar las emociones mediante ejercicios de respiración, reflexión y diálogo para ayudar a los aprendices a reaccionar con más tranquilidad." data-en="Recognizing and managing emotions through breathing, reflection, and dialogue exercises to help learners respond more calmly.">Reconocer y controlar las emociones mediante ejercicios de respiración, reflexión y diálogo para ayudar a los aprendices a reaccionar con más tranquilidad.</p>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 data-es="Autoestima y confianza" data-en="Self-esteem and confidence">Autoestima y confianza</h3>
+                <p data-es="Fortalecer la confianza y valoración personal de los aprendices mediante actividades que destaquen sus habilidades, logros y cualidades." data-en="Strengthening learners’ confidence and self-worth through activities that highlight their skills, achievements, and qualities.">Fortalecer la confianza y valoración personal de los aprendices mediante actividades que destaquen sus habilidades, logros y cualidades.</p>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</h3>
+                <p data-es="Trabajo conjunto entre aprendices mediante actividades grupales que fortalezcan la confianza social y el aporte de cada participante." data-en="Teamwork among learners through group activities that strengthen social confidence and encourage participation from everyone.">Trabajo conjunto entre aprendices mediante actividades grupales que fortalezcan la confianza social y el aporte de cada participante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders - Galería elegante -->
+    <section class="founders-section" id="fundadores">
+        <div class="section-header">
+            <h2 class="section-title" data-es="NUESTRO EQUIPO" data-en="OUR TEAM">NUESTRO<br>EQUIPO</h2>
+            <p class="section-subtitle" data-es="Fundadores" data-en="Founders">Fundadores</p>
+        </div>
+        <div class="founders-grid">
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="maria foto.png" alt="María José Ramírez">
+                    <div class="founder-overlay">
+                        <a href="infografia1.html" class="btn-primary">
+                            <i class="fas fa-file-alt"></i> Ver Documento
+                        </a>
+                    </div>
+                </div>
+                <h3>MARÍA JOSÉ RAMÍREZ</h3>
+            </div>
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="isa foto.png" alt="Isabella Gómez Castillo">
+                    <div class="founder-overlay">
+                        <a href="infografia2.html" class="btn-primary">
+                            <i class="fas fa-file-alt"></i> Ver Documento
+                        </a>
+                    </div>
+                </div>
+                <h3>ISABELLA GÓMEZ CASTILLO</h3>
+            </div>
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="tapias foto.png" alt="Isabella Tapias Lotero">
+                    <div class="founder-overlay">
+                        <a href="infografia3.html" class="btn-primary">
+                            <i class="fas fa-file-alt"></i> Ver Documento
+                        </a>
+                    </div>
+                </div>
+                <h3>ISABELLA TAPIAS LOTERO</h3>
+            </div>
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="migue foto.png" alt="Miguel Ángel Calderón">
+                    <div class="founder-overlay">
+                        <a href="infografia4.html" class="btn-primary">
+                            <i class="fas fa-file-alt"></i> Ver Documento
+                        </a>
+                    </div>
+                </div>
+                <h3>MIGUEL ÁNGEL CALDERÓN</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Contact - Combinados -->
+    <section class="services-contact-section" id="contacto">
+        <div class="services-grid">
+            <div class="service-card large">
+                <div class="service-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 data-es="SERVICIOS" data-en="SERVICES">SERVICIOS</h3>
+                <p data-es="Ofrecemos asesorías individuales y grupales, además de programas de acompañamiento diseñados para diferentes necesidades." data-en="We offer individual and group counseling, as well as support programs tailored to different needs.">Ofrecemos asesorías individuales y grupales, además de programas de acompañamiento diseñados para diferentes necesidades.</p>
+            </div>
+            <div class="service-card large">
+                <div class="service-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 data-es="BENEFICIOS" data-en="BENEFICITS">BENEFICIOS</h3>
+                <p data-es="Al unirte a nuestra comunidad, tendrás acceso a un espacio seguro, actividades enriquecedoras y la posibilidad de crecer junto a otras personas." data-en="By joining our community, you'll have access to a safe space, enriching activities, and the opportunity to grow alongside others.">Al unirte a nuestra comunidad, tendrás acceso a un espacio seguro, actividades enriquecedoras y la posibilidad de crecer junto a otras personas..</p>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2 class="section-title" data-es="ÚNETE A NUESTRA COMUNIDAD" data-en="JOIN OUR COMMUNITY">ÚNETE A<br>NUESTRA COMUNIDAD</h2>
+            <div class="contact-content">
+                <div class="contact-image">
+                    <img src="muñeca.jpeg" alt="Únete a nuestra comunidad">
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span data-es="Teléfono: +57 313 6814426" data-en="Phone: +57 313 6814426">+57 313 6814426</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span data-es="Correo: miguelangeltordecilla2345@gmail.com" data-en="Email: miguelangeltordecilla2345@gmail.com">miguelangeltordecilla2345@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="ubicacion">
+        <div class="section-header">
+            <h2 class="section-title" data-es="NUESTRA UBICACIÓN" data-en="OUR LOCATION">NUESTRA<br>UBICACIÓN</h2>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.707977660413!2d-75.5685611!3d6.302048000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f25d6670d4d%3A0x8043999e5e767b96!2sSENA%20-%20Centro%20de%20Tecnolog%C3%ADa%20de%20la%20Manufactura%20Avanzada!5e0!3m2!1ses-419!2sco!4v1764053743384!5m2!1ses-419!2sco" 
+                width="100%" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-slogan" data-es="Fundación de Apoyo Emocional" data-en="Emotional Support Foundation">
+                Fundación de Apoyo Emocional
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <strong data-es="Síguenos" data-en="Follow us">Síguenos</strong>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" aria-label="Facebook" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" aria-label="Instagram" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+        let menuOpen = false;
+
+        function toggleLanguage() {
+            const btn = document.getElementById('translateBtn');
+            if (currentLang === 'es') {
+                currentLang = 'en';
+                btn.setAttribute('data-lang', 'Traducir a Español');
+                translatePage('en');
+                document.documentElement.lang = 'en';
+            } else {
+                currentLang = 'es';
+                btn.setAttribute('data-lang', 'Translate to English');
+                translatePage('es');
+                document.documentElement.lang = 'es';
+            }
+        }
+
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) element.textContent = text;
+            });
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            menuOpen = !menuOpen;
+            navLinks.classList.toggle('active');
+            const icon = document.querySelector('.menu-toggle i');
+            icon.className = menuOpen ? 'fas fa-times' : 'fas fa-bars';
+        }
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                if (menuOpen) toggleMenu();
+            });
+        });
+
+        // Animación de stats en hero
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.hero-stats'));
+    </script>
+</body>
+</html>
