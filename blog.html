@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Hilos de Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/blog.css">
+</head>
+<body>
+
+    <!-- Translate button -->
+    <button class="translate-btn" id="translateBtn" onclick="toggleLanguage()" title="Translate">
+        <i class="fas fa-language"></i>
+    </button>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-box" id="modalBox">
+            <button class="modal-close" onclick="closeModal()" title="Cerrar"><i class="fas fa-times"></i></button>
+
+            <!-- Image slot: la imagen se define en el arreglo "cards" con el campo "img" -->
+            <div class="modal-img-slot" id="modalImgSlot">
+                <img id="modalImg" src="" alt="Imagen del tema">
+            </div>
+
+            <!-- Content injected by JS -->
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="page">
+
+        <header class="header-section">
+            <div class="header-nav">
+                <div class="logo-header">
+                    <img src="logo.jpeg" alt="Logo Fundación Hilos de Amor">
+                </div>
+                <a href="index.html" class="btn-volver">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-es="VOLVER" data-en="BACK">VOLVER</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-book-open"></i>
+                    <span data-es="Blog de bienestar" data-en="Wellness Blog">Blog de bienestar</span>
+                </div>
+                <h1 class="main-title" data-es="Blog — Hilos de Amor 💛" data-en="Blog — Threads of Love 💛">
+                    Blog — Hilos de Amor 💛
+                </h1>
+                <p class="hero-desc" data-es="Un espacio para sentirte acompañado" data-en="A space to feel accompanied">
+                    Un espacio para sentirte acompañado
+                </p>
+            </div>
+        </section>
+
+        <div class="blog-content">
+
+            <div class="blog-intro">
+                <p data-es="A veces el estrés académico, los problemas personales o la ansiedad hacen que todo se sienta más pesado. Y aunque muchas personas sonrían todos los días, por dentro pueden sentirse agotadas, desmotivadas o incluso perdidas." data-en="Sometimes academic stress, personal problems, or anxiety make everything feel heavier. And although many people smile every day, inside they may feel exhausted, unmotivated, or even lost.">
+                    A veces el estrés académico, los problemas personales o la ansiedad hacen que todo se sienta más pesado. Y aunque muchas personas sonrían todos los días, por dentro pueden sentirse agotadas, desmotivadas o incluso perdidas.
+                </p>
+                <p data-es="Este blog fue creado para eso. Para que tengas un lugar donde leer, identificarte, respirar un poco y recordar que no estás solo." data-en="This blog was created for that. So you have a place to read, identify yourself, breathe a little, and remember that you are not alone.">
+                    Este blog fue creado para eso. Para que tengas un lugar donde leer, identificarte, respirar un poco y recordar que no estás solo.
+                </p>
+                <p data-es="Aquí hablamos de emociones reales, problemas que muchos aprendices viven y pequeñas herramientas que pueden ayudarte a sentirte mejor poco a poco." data-en="Here we talk about real emotions, problems that many learners experience, and small tools that can help you feel better little by little.">
+                    Aquí hablamos de emociones reales, problemas que muchos aprendices viven y pequeñas herramientas que pueden ayudarte a sentirte mejor poco a poco.
+                </p>
+            </div>
+
+            <section class="cards-section">
+                <h2 class="section-title" data-es="Temas del Blog" data-en="Blog Topics">Temas del Blog</h2>
+                <div class="cards-grid" id="cardsGrid">
+                </div>
+            </section>
+
+            <div class="quotes-section">
+                <h2 class="section-title" data-es="Frases para guardar 💬" data-en="Phrases to keep 💬">Frases para guardar 💬</h2>
+                <div class="quotes-grid">
+                    <div class="quote-card"><p data-es='"Descansar también es avanzar."' data-en='"Resting is also moving forward."'>"Descansar también es avanzar."</p></div>
+                    <div class="quote-card"><p data-es='"Tu valor no depende de una nota."' data-en='"Your worth does not depend on a grade."'>"Tu valor no depende de una nota."</p></div>
+                    <div class="quote-card"><p data-es='"No tienes que poder con todo al mismo tiempo."' data-en='"You don\'t have to handle everything at once."'>"No tienes que poder con todo al mismo tiempo."</p></div>
+                    <div class="quote-card"><p data-es='"Hablar de lo que sientes también es valentía."' data-en='"Talking about what you feel is also courage."'>"Hablar de lo que sientes también es valentía."</p></div>
+                    <div class="quote-card"><p data-es='"Incluso los días difíciles terminan."' data-en='"Even difficult days end."'>"Incluso los días difíciles terminan."</p></div>
+                </div>
+            </div>
+
+            <div class="daily-tip">
+                <i class="fas fa-headphones"></i>
+                <h3 data-es="🎧 Recomendación del día" data-en="🎧 Recommendation of the day">🎧 Recomendación del día</h3>
+                <p data-es="Haz una pausa hoy. Respira profundo. Escucha una canción que te guste. Y recuerda que sobrevivir también cuenta como progreso." data-en="Take a break today. Breathe deeply. Listen to a song you like. And remember that surviving also counts as progress.">
+                    Haz una pausa hoy. Respira profundo. Escucha una canción que te guste. Y recuerda que sobrevivir también cuenta como progreso.
+                </p>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-title" data-es="Fundación Hilos de Amor" data-en="Threads of Love Foundation">Fundación Hilos de Amor</p>
+                <p class="footer-subtitle" data-es="Un espacio para crecer y sanar" data-en="A space to grow and heal">Un espacio para crecer y sanar</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+    const cards = [
+        {
+            img: 'nueva21.jpg',  
+            icon: 'fa-cloud-rain',
+            emoji: '',
+            titleEs: '"No tengo ganas de hacer nada"',
+            titleEn: '"I don\'t feel like doing anything"',
+            previewEs: 'Hay días donde el cuerpo está en clase… pero la mente no. Te cuesta concentrarte, no tienes energía y todo te irrita.',
+            previewEn: 'There are days when the body is in class... but the mind is not. You have trouble focusing, no energy, everything irritates you.',
+            bodyEs: `
+                <p>Hay días donde el cuerpo está en clase… pero la mente no. Te cuesta concentrarte. No tienes energía. Las tareas se acumulan. Todo te irrita. Y aunque descanses, sigues sintiéndote agotado.</p>
+                <p>Eso puede pasar cuando llevas mucho tiempo bajo presión emocional o académica. A veces creemos que somos flojos, pero realmente estamos cansados mentalmente.</p>
+                <p><strong>Señales de agotamiento emocional:</strong></p>
+                <ul class="card-list">
+                    <li>Dormir demasiado o no poder dormir</li>
+                    <li>Sentirte desmotivado todo el tiempo</li>
+                    <li>Llorar fácilmente</li>
+                    <li>Sentir ansiedad por tareas simples</li>
+                    <li>Pensar constantemente que "no eres suficiente"</li>
+                    <li>Sentirte saturado por todo</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-heart"></i>Descansar también es necesario. No tienes que exigirte perfección todos los días.</div>`,
+            bodyEn: `
+                <p>There are days when the body is in class... but the mind is not. You have trouble concentrating. You have no energy. Tasks pile up. Everything irritates you. And even when you rest, you still feel exhausted.</p>
+                <p>This can happen when you've been under emotional or academic pressure for a long time. Sometimes we think we are lazy, but we are really mentally tired.</p>
+                <p><strong>Signs of emotional exhaustion:</strong></p>
+                <ul class="card-list">
+                    <li>Sleeping too much or not being able to sleep</li>
+                    <li>Feeling unmotivated all the time</li>
+                    <li>Crying easily</li>
+                    <li>Feeling anxious about simple tasks</li>
+                    <li>Constantly thinking that "you are not enough"</li>
+                    <li>Feeling overwhelmed by everything</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-heart"></i>Resting is also necessary. You don't have to demand perfection from yourself every day.</div>`
+        },
+        {
+            img: 'nueva18.jpg', 
+            icon: 'fa-book',
+            emoji: '',
+            titleEs: 'Estrés académico: cuando estudiar empieza a doler',
+            titleEn: 'Academic stress: when studying starts to hurt',
+            previewEs: 'Muchos aprendices sienten presión constante por las notas, los trabajos, las exposiciones y el miedo a fallar.',
+            previewEn: 'Many learners feel constant pressure about grades, assignments, presentations and the fear of failure.',
+            bodyEs: `
+                <p>Muchos aprendices sienten presión constante por las notas, los trabajos, las exposiciones, las prácticas, el miedo a fallar y compararse con otros. Y aunque estudiar es importante, tu bienestar también lo es.</p>
+                <p><strong>Cosas que pueden ayudarte:</strong></p>
+                <ul class="card-list check">
+                    <li>Organizar tus tiempos</li>
+                    <li>Hacer pausas pequeñas</li>
+                    <li>Dormir mejor</li>
+                    <li>Escuchar música relajante</li>
+                    <li>Hablar con alguien</li>
+                    <li>No dejar todo para el último momento</li>
+                    <li>Recordar que una nota no define tu valor</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-seedling"></i>Tu proceso vale incluso cuando avanzas lento.</div>`,
+            bodyEn: `
+                <p>Many learners feel constant pressure about grades, assignments, presentations, internships, fear of failure, and comparing themselves to others. And while studying is important, your well-being is too.</p>
+                <p><strong>Things that can help you:</strong></p>
+                <ul class="card-list check">
+                    <li>Organize your time</li>
+                    <li>Take small breaks</li>
+                    <li>Sleep better</li>
+                    <li>Listen to relaxing music</li>
+                    <li>Talk to someone</li>
+                    <li>Don't leave everything to the last minute</li>
+                    <li>Remember that a grade does not define your worth</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-seedling"></i>Your process is valuable even when you move slowly.</div>`
+        },
+        {
+            img: 'nueva19.jpg',   
+            icon: 'fa-hands',
+            emoji: '',
+            titleEs: '"Siento que nadie me entiende"',
+            titleEn: '"I feel like nobody understands me"',
+            previewEs: 'A veces uno se rodea de muchas personas… y aun así sentirse solo. Pedir ayuda no te hace débil.',
+            previewEn: 'Sometimes you surround yourself with many people... and still feel alone. Asking for help doesn\'t make you weak.',
+            bodyEs: `
+                <p>A veces uno se rodea de muchas personas… y aun así sentirse solo.</p>
+                <p>Puede pasar cuando:</p>
+                <ul class="card-list">
+                    <li>Guardas todo lo que sientes</li>
+                    <li>Crees que eres una carga</li>
+                    <li>Piensas demasiado las cosas</li>
+                    <li>Sientes que nadie te escucha realmente</li>
+                </ul>
+                <p>Pero algo importante: no tienes que enfrentar todo solo. Hablar con alguien de confianza puede ayudarte muchísimo más de lo que imaginas.</p>
+                <div class="highlight-box"><i class="fas fa-heart"></i>Pedir ayuda no te hace débil. Te hace humano.</div>`,
+            bodyEn: `
+                <p>Sometimes you surround yourself with many people... and still feel alone.</p>
+                <p>It can happen when:</p>
+                <ul class="card-list">
+                    <li>You keep everything you feel to yourself</li>
+                    <li>You think you are a burden</li>
+                    <li>You overthink things</li>
+                    <li>You feel that nobody really listens to you</li>
+                </ul>
+                <p>But something important: you don't have to face everything alone. Talking to someone you trust can help you much more than you imagine.</p>
+                <div class="highlight-box"><i class="fas fa-heart"></i>Asking for help doesn't make you weak. It makes you human.</div>`
+        },
+        {
+            img: 'nueva14.jpg',   
+            icon: 'fa-palette',
+            emoji: '',
+            titleEs: 'Los hobbies también ayudan a sanar',
+            titleEn: 'Hobbies also help heal',
+            previewEs: 'No todo en la vida tiene que ser productividad. A veces hacer algo simple puede ayudarte a sentirte mejor emocionalmente.',
+            previewEn: 'Not everything in life has to be about productivity. Sometimes doing something simple can help you feel better emotionally.',
+            bodyEs: `
+                <p>No todo en la vida tiene que ser productividad. A veces hacer algo simple puede ayudarte a sentirte mejor emocionalmente.</p>
+                <p><strong>Como:</strong></p>
+                <ul class="card-list">
+                    <li>Pintar</li><li>Escuchar música</li><li>Cocinar</li><li>Tejer</li>
+                    <li>Dibujar</li><li>Escribir</li><li>Bailar</li><li>Hacer manualidades</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-star"></i>Los hobbies ayudan a despejar la mente y reducir el estrés. No necesitas ser experto en algo para disfrutarlo. Haz cosas que le den paz a tu mente.</div>`,
+            bodyEn: `
+                <p>Not everything in life has to be about productivity. Sometimes doing something simple can help you feel better emotionally.</p>
+                <p><strong>Such as:</strong></p>
+                <ul class="card-list">
+                    <li>Painting</li><li>Listening to music</li><li>Cooking</li><li>Knitting</li>
+                    <li>Drawing</li><li>Writing</li><li>Dancing</li><li>Doing crafts</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-star"></i>Hobbies help clear the mind and reduce stress. You don't need to be an expert at something to enjoy it. Do things that bring peace to your mind.</div>`
+        },
+        {
+            img: 'nueva15.jpg',  
+            icon: 'fa-mobile-alt',
+            emoji: '',
+            titleEs: 'Compararte con otros te roba tranquilidad',
+            titleEn: 'Comparing yourself to others steals your peace',
+            previewEs: 'Las redes sociales hacen parecer que todo el mundo tiene la vida resuelta, pero detrás de muchas fotos también existen problemas.',
+            previewEn: 'Social media makes it seem like everyone has life figured out, but behind many photos there are also problems.',
+            bodyEs: `
+                <p>Las redes sociales muchas veces hacen parecer que todo el mundo tiene la vida resuelta. Pero detrás de muchas fotos también existen problemas, inseguridades y ansiedad.</p>
+                <p>No compares tu proceso con el de alguien más. Todos avanzan diferente. Todos tienen luchas distintas. Todos tienen tiempos distintos.</p>
+                <div class="highlight-box"><i class="fas fa-seedling"></i>Ir lento también es avanzar.</div>`,
+            bodyEn: `
+                <p>Social media often makes it seem like everyone has their life figured out. But behind many photos there are also problems, insecurities, and anxiety.</p>
+                <p>Don't compare your process to someone else's. Everyone advances differently. Everyone has different struggles. Everyone has different timelines.</p>
+                <div class="highlight-box"><i class="fas fa-seedling"></i>Going slow is also moving forward.</div>`
+        },
+        {
+            img: 'nueva16.jpg', 
+            icon: 'fa-brain',
+            emoji: '',
+            titleEs: 'Pequeñas acciones para cuidar tu salud mental',
+            titleEn: 'Small actions to take care of your mental health',
+            previewEs: 'Haz pausas, aléjate del celular, escucha música, sal un momento, escribe lo que sientes y habla con alguien.',
+            previewEn: 'Take breaks, step away from your phone, listen to music, go outside, write what you feel, and talk to someone.',
+            bodyEs: `
+                <ul class="card-list check">
+                    <li><div><strong>🌿 Haz pausas</strong><br>No estudies durante horas sin descansar.</div></li>
+                    <li><div><strong>📱 Aléjate un momento del celular</strong><br>A veces las redes sociales aumentan la ansiedad sin que lo notes.</div></li>
+                    <li><div><strong>🎵 Escucha algo que te calme</strong><br>La música puede ayudarte muchísimo emocionalmente.</div></li>
+                    <li><div><strong>☀️ Sal un momento</strong><br>Tomar aire también ayuda a despejar la mente.</div></li>
+                    <li><div><strong>✍️ Escribe lo que sientes</strong><br>A veces escribir libera más de lo que imaginamos.</div></li>
+                    <li><div><strong>🤝 Habla con alguien</strong><br>No guardes todo para ti.</div></li>
+                </ul>`,
+            bodyEn: `
+                <ul class="card-list check">
+                    <li><div><strong>🌿 Take breaks</strong><br>Don't study for hours without resting.</div></li>
+                    <li><div><strong>📱 Step away from your phone</strong><br>Sometimes social media increases anxiety without you noticing.</div></li>
+                    <li><div><strong>🎵 Listen to something calming</strong><br>Music can help you a lot emotionally.</div></li>
+                    <li><div><strong>☀️ Go outside for a moment</strong><br>Getting fresh air also helps clear the mind.</div></li>
+                    <li><div><strong>✍️ Write down what you feel</strong><br>Sometimes writing frees us more than we imagine.</div></li>
+                    <li><div><strong>🤝 Talk to someone</strong><br>Don't keep everything to yourself.</div></li>
+                </ul>`
+        },
+        {
+            img: 'nueva22.jpg',
+            icon: 'fa-sun',
+            emoji: '',
+            titleEs: 'Cosas que probablemente necesitas escuchar hoy',
+            titleEn: 'Things you probably need to hear today',
+            previewEs: 'Está bien cansarte. Está bien pedir ayuda. No tienes que ser perfecto para valer.',
+            previewEn: 'It\'s okay to get tired. It\'s okay to ask for help. You don\'t have to be perfect to be worthy.',
+            bodyEs: `
+                <ul class="card-list">
+                    <li>Está bien cansarte</li>
+                    <li>Está bien pedir ayuda</li>
+                    <li>Está bien no poder con todo</li>
+                    <li>No eres menos por sentirte mal</li>
+                    <li>Tu salud mental importa</li>
+                    <li>Mereces descansar</li>
+                    <li>Mereces sentirte escuchado</li>
+                    <li>No tienes que ser perfecto para valer</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-rainbow"></i>No tienes que tener la vida resuelta a esta edad. No tienes que saberlo todo. Está bien aprender poco a poco.</div>`,
+            bodyEn: `
+                <ul class="card-list">
+                    <li>It's okay to get tired</li>
+                    <li>It's okay to ask for help</li>
+                    <li>It's okay not to be able to handle everything</li>
+                    <li>You are not less for feeling bad</li>
+                    <li>Your mental health matters</li>
+                    <li>You deserve to rest</li>
+                    <li>You deserve to feel heard</li>
+                    <li>You don't have to be perfect to be worthy</li>
+                </ul>
+                <div class="highlight-box"><i class="fas fa-rainbow"></i>You don't have to have life figured out at this age. You don't have to know everything. It's okay to learn little by little.</div>`
+        }
+    ];
+
+    /* Per-card uploaded image store — ya no se usa */
+    let currentLang = 'es';
+    let currentCardIndex = null;
+
+    /* ─── RENDER CARDS ─── */
+    function renderCards() {
+        const grid = document.getElementById('cardsGrid');
+        grid.innerHTML = cards.map((c, i) => `
+            <div class="blog-card" onclick="openModal(${i})">
+                <div class="card-inner">
+                    <div class="card-icon"><i class="fas ${c.icon}"></i></div>
+                    <span class="card-emoji">${c.emoji}</span>
+                    <div class="card-title">${currentLang === 'es' ? c.titleEs : c.titleEn}</div>
+                    <div class="card-preview">${currentLang === 'es' ? c.previewEs : c.previewEn}</div>
+                    <div class="card-open-btn">
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                        ${currentLang === 'es' ? 'Leer más' : 'Read more'}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    /* ─── MODAL ─── */
+    function openModal(index) {
+        currentCardIndex = index;
+        const c = cards[index];
+        const lang = currentLang;
+
+        // Set content
+        document.getElementById('modalContent').innerHTML = `
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas ${c.icon}"></i></div>
+                <div class="modal-title-wrap">
+                    <span class="modal-emoji">${c.emoji}</span>
+                    <div class="modal-title">${lang === 'es' ? c.titleEs : c.titleEn}</div>
+                </div>
+            </div>
+            <div class="modal-body">${lang === 'es' ? c.bodyEs : c.bodyEn}</div>
+        `;
+
+        // Set image from card data
+        const img = document.getElementById('modalImg');
+        if (c.img) {
+            img.src = c.img;
+            img.style.display = 'block';
+        } else {
+            img.src = '';
+            img.style.display = 'none';
+        }
+
+        document.getElementById('modalOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('modalBox').scrollTop = 0;
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+        currentCardIndex = null;
+    }
+
+    function handleOverlayClick(e) {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ─── TRANSLATE ─── */
+    function toggleLanguage() {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        translatePage(currentLang);
+        renderCards();
+        if (currentCardIndex !== null) openModal(currentCardIndex);
+    }
+
+    function translatePage(lang) {
+        document.querySelectorAll('[data-es][data-en]').forEach(el => {
+            const text = el.getAttribute(`data-${lang}`);
+            if (text) el.textContent = text;
+        });
+    }
+
+    /* ─── INIT ─── */
+    renderCards();
+    </script>
+</body>
+</html>
