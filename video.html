@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video — Hilos de Amor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/video.css">
+</head>
+<body>
+
+    <button class="translate-btn" id="translateBtn" onclick="toggleLanguage()" title="Translate">
+        <i class="fas fa-language"></i>
+    </button>
+
+    <div class="page">
+        <header class="header-section">
+            <div class="header-nav">
+                <div class="logo-header">
+                    <img src="logo.jpeg" alt="Logo Fundación Hilos de Amor">
+                </div>
+                <a href="index.html" class="btn-volver">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-es="VOLVER" data-en="BACK">VOLVER</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-video"></i>
+                    <span data-es="Galería de videos" data-en="Video Gallery">Galería de videos</span>
+                </div>
+                <h1 class="main-title" data-es="Conoce más sobre Hilos de Amor 💛" data-en="Learn more about Threads of Love 💛">
+                    Conoce más sobre Hilos de Amor 💛
+                </h1>
+                <p class="hero-desc" data-es="Mira nuestros videos y descubre todo lo que hacemos por el bienestar emocional." data-en="Watch our videos and discover everything we do for emotional well-being.">
+                    Mira nuestros videos y descubre todo lo que hacemos por el bienestar emocional.
+                </p>
+            </div>
+        </section>
+
+        <div class="videos-content">
+            <!-- Video 1: Conócenos -->
+            <section class="video-card">
+                <div class="video-card-header">
+                    <div class="video-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="video-info">
+                        <h2 data-es="Conoce a Hilos de Amor" data-en="Meet Threads of Love">Conoce a Hilos de Amor</h2>
+                        <p data-es="Descubre nuestra misión, visión y el impacto que generamos en la comunidad." data-en="Discover our mission, vision, and the impact we create in the community.">Descubre nuestra misión, visión y el impacto que generamos en la comunidad.</p>
+                    </div>
+                </div>
+                <div class="video-wrapper">
+                    <video controls preload="metadata" poster="logo.jpeg">
+                        <source src="videos/Video2.mp4" type="video/mp4">
+                        <p data-es="Tu navegador no soporta la reproducción de video." data-en="Your browser does not support video playback.">Tu navegador no soporta la reproducción de video.</p>
+                    </video>
+                </div>
+            </section>
+
+            <!-- Video 2: Animación -->
+            <section class="video-card">
+                <div class="video-card-header">
+                    <div class="video-icon accent">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="video-info">
+                        <h2 data-es="Animación del equipo" data-en="Team Animation">Animación del equipo</h2>
+                        <p data-es="Una creación original de nuestro equipo que refleja nuestra esencia y valores." data-en="An original creation by our team that reflects our essence and values.">Una creación original de nuestro equipo que refleja nuestra esencia y valores.</p>
+                    </div>
+                </div>
+                <div class="video-wrapper">
+                    <video controls preload="metadata" poster="logo.jpeg">
+                        <source src="videos/Video1.mp4" type="video/mp4">
+                        <p data-es="Tu navegador no soporta la reproducción de video." data-en="Your browser does not support video playback.">Tu navegador no soporta la reproducción de video.</p>
+                    </video>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-title" data-es="Fundación Hilos de Amor" data-en="Threads of Love Foundation">Fundación Hilos de Amor</p>
+                <p class="footer-subtitle" data-es="Un espacio para crecer y sanar" data-en="A space to grow and heal">Un espacio para crecer y sanar</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const btn = document.getElementById('translateBtn');
+            if (currentLang === 'es') {
+                currentLang = 'en';
+                btn.setAttribute('data-lang', 'Traducir a Español');
+                translatePage('en');
+            } else {
+                currentLang = 'es';
+                btn.setAttribute('data-lang', 'Translate to English');
+                translatePage('es');
+            }
+        }
+
+        function translatePage(lang) {
+            document.querySelectorAll('[data-es][data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) el.textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>
